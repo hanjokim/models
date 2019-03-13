@@ -17,8 +17,8 @@ from PIL import Image
 sys.path.append("..")
 from object_detection.utils import ops as utils_ops
 
-if StrictVersion(tf.__version__) < StrictVersion('1.12.0'):
-  raise ImportError('Please upgrade your TensorFlow installation to v1.12.*.')
+# if StrictVersion(tf.__version__) < StrictVersion('1.12.0'):
+#   raise ImportError('Please upgrade your TensorFlow installation to v1.12.*.')
 
 # This is needed to display the images.
 # %matplotlib inline
@@ -67,7 +67,7 @@ def load_image_into_numpy_array(image):
 # image2.jpg
 # If you want to test the code with your images, just add path to the images to the TEST_IMAGE_PATHS.
 PATH_TO_TEST_IMAGES_DIR = 'test_images'
-TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.jpg'.format(i)) for i in range(3, 4) ]
+TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.jpg'.format(i)) for i in range(100, 105) ]
 
 # Size, in inches, of the output images.
 IMAGE_SIZE = (12, 8)
@@ -142,3 +142,4 @@ for image_path in TEST_IMAGE_PATHS:
   plt.figure(figsize=IMAGE_SIZE)
   matplotlib.use("TkAgg")
   plt.imshow(image_np)
+  plt.show()
